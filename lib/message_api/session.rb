@@ -16,6 +16,8 @@ module MessageApi
 
       http = ::Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE 
+      http.ca_file = '/usr/lib/ssl/certs/ca-certificates.crt'
       
       target = "#{path}?access_token=#{@token}"
       

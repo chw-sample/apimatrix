@@ -5,6 +5,8 @@ module Auth
 
     http = ::Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE 
+    http.ca_file = '/usr/lib/ssl/certs/ca-certificates.crt'
     
     req = ::Net::HTTP::Post.new("/oauth/token")
     req.body = "client_id=#{ApiKey}&client_secret=#{ApiSecret}&redirect_uri=#{callback_url}&grant_type=authorization_code&code=#{code}"
