@@ -1,3 +1,18 @@
-hello
-
-=link_to "log in", "https://auth.tfoundry.com/oauth/authorize?client_id=01135fcd7a8c7bc4891ce14dc3a9136a&response_type=token&scope=message&redirect_uri=#{request.url}"
+-if @message_api
+  %p Your message list:
+  -@message_api.list.each do |m|
+    %p
+      = link_to "id: #{m.id}", message_path(:id=>m.id)
+      =" - #{m.content}"
+      = link_to 'Delete', message_path(:id=>m.id), :method => :delete
+  %p
+  =form_for messages_path do |f|
+    =f.label :receipt, 'Receipt'
+    =f.text_field :receipt
+    =f.label :content, 'Content'
+    =f.text_field :content
+    =f.submit "Send"
+         
+-else
+  Hi stranger, please 
+  =link_to "log in", "https://auth.tfoundry.com/oauth/authorize?client_id=#{ApiKey}&response_type=code&scope=message,profile&redirect_uri=#{ApiCallback}"

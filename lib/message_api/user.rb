@@ -1,7 +1,6 @@
 module MessageApi
   class User  
     include Session
-# d71c4aa9cafbb4d6f3c533e282112554
 
     def list
       response = client(:GET, "/a1/messages/messages/")

@@ -1,0 +1,9 @@
+development:
+  key: 01135fcd7a8c7bc4891ce14dc3a9136a
+  secret: bd49ad9c47f1c0a2
+  callback: http://localhost:3000
+    
+production:
+  key: 01135fcd7a8c7bc4891ce14dc3a9136a
+  secret: bd49ad9c47f1c0a2
+  callback: http://chw-sample.herokuapp.com
