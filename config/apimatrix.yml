@@ -4,6 +4,6 @@ development:
   callback: http://localhost:3000
     
 production:
-  key: 01135fcd7a8c7bc4891ce14dc3a9136a
-  secret: bd49ad9c47f1c0a2
+  key: d9b7b494ea65ebb8c16bc8a1f7c59204
+  secret: 943be567d47ecc1a
   callback: http://chw-sample.herokuapp.com
